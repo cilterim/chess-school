@@ -1,0 +1,207 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="chess.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo.png">
+    <title>CHESS SCHOOL</title>
+</head>
+<body style="margin: 0px;">
+  <div class="first-section">
+    <header id="main-header" class="header">
+      <div class="left-section">
+          <div class="header-logo-div">
+              <img class="header-logo" src="img/whiteknight.png">
+          </div>
+          <div>
+              <p class="header-title">CHESS</p>
+              <p class="header-title">SCHOOL</p>
+          </div>
+      </div>
+      <div class="middle-section">
+          <div class="home-div">
+              <span class="home">Home</span>
+          </div>
+          <div class="freeTrialLesson-div">
+              <a href="https://chess-school.mystrikingly.com/i/login"><span class="freeTrialLesson">Free Trial Lesson</span></a>
+          </div>
+      </div>
+      <div class="right-section">
+          <div class="cart-div">
+              <img class="cart" src="img/cart.png">
+              <span class="cart-number">0</span>
+          </div>
+          <div class="login-div">
+              <img class="avatar" src="img/avatar.png">
+                <button id="loginButton" class="loginButton">Login</button>
+              
+                <div id="loginModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2 style="text-align: center;">Login</h2>
+                    <form>
+                      <label for="username">Username:</label>
+                      <input type="text" id="username" name="username" required><br><br>
+                      <label for="password">Password:</label>
+                      <input type="password" id="password" name="password" required><br><br>
+                      <input type="submit" value="Login" class="login-button">
+                    </form>
+                    <p>Don't have an account? <a href="#" id="registerLink">Register</a></p>
+                    <p><a href="#" id="forgotPasswordLink">Forgot password?</a></p>
+                  </div>
+                </div>
+                <!-- Register Modal -->
+              <div id="registerModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Register</h2>
+                    <form>
+                      <label for="username">Username:</label>
+                      <input type="text" id="username" name="username" required><br><br>
+                      <label for="email">Email:</label>
+                      <input type="email" id="email" name="email" required><br><br>
+                      <label for="password">Password:</label>
+                      <input type="password" id="password" name="password" required><br><br>
+                      <input type="submit" class="register-button" value="Register">
+                    </form>
+                    <p>Already have an account? <a href="#" id="loginLink">Login</a></p>
+                  </div>
+                </div>
+                
+                <!-- Forgot Password Modal -->
+                <div id="forgotPasswordModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Forgot Password</h2>
+                    <form>
+                      <label for="email">Email:</label>
+                      <input type="email" id="email" name="email" required><br><br>
+                      <input type="submit" value="Reset Password">
+                    </form>
+                    <p>Remembered your password? <a href="#" id="loginLink2">Login</a></p>
+                  </div>
+                </div>
+                <script>
+
+                  // Get the login button
+                  var loginButton = document.getElementById("loginButton");
+              
+                  // Event listener for login button
+                  loginButton.addEventListener("click", openLoginModal);
+              
+                  // Get the modals
+                  var loginModal = document.getElementById("loginModal");
+                  var registerModal = document.getElementById("registerModal");
+                  var forgotPasswordModal = document.getElementById("forgotPasswordModal");
+              
+                  // Get the close buttons
+                  var closeButtons = document.getElementsByClassName("close");
+              
+                  // Get the links to switch between modals
+                  var registerLink = document.getElementById("registerLink");
+                  var loginLink = document.getElementById("loginLink");
+                  var loginLink2 = document.getElementById("loginLink2");
+                  var forgotPasswordLink = document.getElementById("forgotPasswordLink");
+              
+                  // Open login modal
+                  function openLoginModal() {
+                    loginModal.style.display = "block";
+                  }
+                
+                  // Open register modal
+                  function openRegisterModal() {
+                    registerModal.style.display = "block";
+                  }
+                
+                  // Open forgot password modal
+                  function openForgotPasswordModal() {
+                    forgotPasswordModal.style.display = "block";
+                  }
+                
+                  // Close modals
+                  function closeModal() {
+                    loginModal.style.display = "none";
+                    registerModal.style.display = "none";
+                    forgotPasswordModal.style.display = "none";
+                  }
+                
+                  // Event listeners for close buttons
+                  for (var i = 0; i < closeButtons.length; i++) {
+                    closeButtons[i].addEventListener("click", closeModal);
+                  }
+                
+                  // Event listeners for links
+                  registerLink.addEventListener("click", openRegisterModal);
+                  loginLink.addEventListener("click", openLoginModal);
+                  loginLink2.addEventListener("click", openLoginModal);
+                  forgotPasswordLink.addEventListener("click", openForgotPasswordModal);
+                
+                  // Close the modal when the user clicks outside of it
+                  window.onclick = function(event) {
+                    if (event.target == loginModal || event.target == registerModal || event.target == forgotPasswordModal) {
+                      closeModal();
+                    }
+                  }
+                  // Get the header element, its text elements, and image elements
+                  const header = document.getElementById('main-header');
+                  const textElements = header.querySelectorAll('*');
+                  const imageElements = header.querySelectorAll('img');
+
+                  // Define the image sources for different scroll positions
+                  const initialImages = ['img/whiteknight.png', 'img/whitecart.png','img/whiteavatar.png']; // Initial images
+                  const scrolledImages = ['img/blackknight.png', 'img/blackcart.png','img/blackavatar.png']; // Scrolled images
+
+                  // Add a scroll event listener
+                  window.addEventListener('scroll', function() {
+                    // Check the scroll position
+                    if (window.pageYOffset > 0) {
+                      // Scrolled down, change background color, text color, and update image sources
+                      header.style.backgroundColor = '#ffffff';
+                      textElements.forEach(function(element) {
+                        element.style.color = '#000000';
+                      });
+                      imageElements.forEach(function(element, index) {
+                        element.src = scrolledImages[index];
+                      });
+                    } else {
+                      // Scrolled to the top, revert back to initial styles and image sources
+                      header.style.backgroundColor = 'transparent';
+                      textElements.forEach(function(element) {
+                        element.style.color = ''; // Revert back to the default text color
+                      });
+                      imageElements.forEach(function(element, index) {
+                        element.src = initialImages[index];
+                      });
+                    }
+                  });
+                  // Add a scroll event listener
+                  window.addEventListener('scroll', function() {
+                    // Check the scroll position
+                    if (window.pageYOffset > 0) {
+                      // Scrolled down, add bottom border to the header
+                      header.classList.add('scrolled');
+                    } else {
+                      // Scrolled to the top, remove bottom border from the header
+                      header.classList.remove('scrolled');
+                    }
+                  });
+                </script>                
+          </div>
+      </div>
+    </header>
+
+
+    <div class="center-div">
+        <div>
+
+            <p style="font-size: 60px; text-align: center;"><strong>Online Chess Course</strong></p>
+            <h2 style="font-size:28px;text-align:center; margin: 0px;">You can learn advanced strategy, tactics, and theory.</h2>
+            <p style="font-size:18px;text-align:center;margin-top: 30px;margin-bottom: 0px;">Register as a member to get a Free Trial Lesson!</p>
+        </div>
+        <a href="https://chess-school.mystrikingly.com/i/register"><button class="center-button"> Register Now</button></a>
+    </div>
+  </div>
+  <h2 style="margin-top: 600px;">3463</h2>
+</body>
+</html>
