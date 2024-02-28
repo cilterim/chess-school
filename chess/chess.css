@@ -1,0 +1,718 @@
+header {
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+    align-items: center;
+    padding: 30px;
+}
+
+#main-header {
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    /* Additional styling properties */
+}
+
+#main-header.scrolled {
+    border-bottom: 1px solid rgb(200, 200, 200);
+    /* Adjust the color and thickness as desired */
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    -webkit-text-size-adjust: 100%;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 100%;
+    line-height: 1;
+    font-family: "Your Pretty Font", sans-serif;
+    border: 0;
+    max-width: 100%;
+    vertical-align: middle;
+    max-height: 60px;
+    margin-right: 20px;
+}
+
+.header-logo-div {
+    -webkit-text-size-adjust: 100%;
+    line-height: 1;
+    font-size: 16px;
+}
+
+.header-title {
+    -webkit-text-size-adjust: 100%;
+    color: white;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+    border: 0px;
+    font-style: normal;
+    font-size: 100%;
+    font-family: "Your Pretty Font", sans-serif;
+    line-height: inherit;
+    font-weight: 400;
+    display: block;
+}
+
+.middle-section {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home {
+    -webkit-text-size-adjust: 100%;
+    list-style: none;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 0;
+    font-style: normal;
+    font-size: 100%;
+    line-height: 1;
+    font-family: "Your Pretty Font", sans-serif;
+    text-decoration: underline;
+    font-weight: bold;
+    color: white;
+    outline: none;
+    border-bottom-color: inherit;
+    justify-items: center;
+    cursor: pointer;
+}
+
+#homeButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background: none;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.freeTrialLesson {
+    -webkit-text-size-adjust: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    font-family: "Your Pretty Font", sans-serif;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 117%;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    justify-items: center;
+}
+
+.freeTrialLesson:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.right-section {
+    width: 180px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.cart-div {
+    -webkit-text-size-adjust: 100%;
+    list-style: none;
+    white-space: nowrap;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    font-family: "Your Pretty Font", sans-serif;
+    cursor: pointer;
+    font-size: 117%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 5px 10px;
+    align-content: center;
+}
+
+.cart {
+    -webkit-text-size-adjust: 100%;
+    list-style: none;
+    white-space: nowrap;
+    font-size: 117%;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    font-family: "Your Pretty Font", sans-serif;
+    font-weight: 900;
+    color: white;
+    width: 25px;
+    height: 25px;
+    align-content: center;
+}
+
+.cart-number {
+    -webkit-text-size-adjust: 100%;
+    list-style: none;
+    white-space: nowrap;
+    font-style: normal;
+    line-height: 1;
+    font-size: 117%;
+    cursor: pointer;
+    font-family: "Your Pretty Font", sans-serif;
+    font-weight: 400;
+    color: white;
+    align-content: center;
+    height: 25px;
+    padding-top: 7px;
+}
+
+.login-div {
+    -webkit-text-size-adjust: 100%;
+    list-style: none;
+    white-space: nowrap;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 100%;
+    line-height: 1;
+    font-family: "Your Pretty Font", sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 5px 10px;
+}
+
+.avatar {
+    width: 20px;
+    height: 20px;
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    -webkit-text-size-adjust: 100%;
+    text-align: left;
+    line-height: 1.5;
+    font-family: "Your Pretty Font", sans-serif;
+    color: #636972;
+    font-size: 14px !important;
+    padding: 40px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-title {
+    -webkit-text-size-adjust: 100%;
+    text-align: left;
+    font-style: normal;
+    line-height: 1;
+    color: #4b5056;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: "Your Pretty Font", sans-serif;
+}
+
+.modal-email {
+    -webkit-text-size-adjust: 100%;
+    margin: 0;
+    border: 1px solid #c6c9cd;
+    border-radius: 3px;
+    color: #636972;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-family: "Your Pretty Font", sans-serif;
+    line-height: 1.5;
+    font-weight: normal;
+    font-size: 14px;
+    font-style: normal;
+    padding: 6px 8px;
+    min-height: 36px;
+    width: 100%;
+    height: 37px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+.modal-password {
+    -webkit-text-size-adjust: 100%;
+    margin: 0;
+    border: 1px solid #c6c9cd;
+    border-radius: 3px;
+    color: #636972;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-family: "open_sans", "Open Sans", sans-serif;
+    line-height: 1.5;
+    font-weight: normal;
+    font-size: 14px;
+    font-style: normal;
+    padding: 6px 8px;
+    min-height: 36px;
+    width: 100%;
+    height: 37px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.loginButton {
+    -webkit-text-size-adjust: 100%;
+    list-style: none;
+    white-space: nowrap;
+    font-style: normal;
+    font-size: 100%;
+    line-height: 1;
+    color: white;
+    cursor: pointer;
+    font-family: "Your Pretty Font", sans-serif;
+    font-weight: 400;
+    background: none;
+    border: none;
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    margin-top: 150px !important;
+    margin-left: 550px !important;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px !important;
+    /* Could be changed to desired width */
+    height: auto !important;
+    /* Adjust height as needed */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.login-button {
+    width: 300px;
+    height: 40px;
+    background-color: rgb(66, 66, 66);
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+}
+
+.register-button {
+    width: 300px;
+    height: 40px;
+    background-color: rgb(66, 66, 66);
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+}
+
+.center-div {
+    -webkit-text-size-adjust: 100%;
+    list-style: none;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.45;
+    color: whitesmoke;
+    font-size: 17px;
+    font-family: "Your Pretty Font", sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 94% !important;
+    width: 1000px;
+    z-index: 3;
+    padding-top: 135px;
+    padding-bottom: 75px;
+}
+.center-div-p {
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5); /* Add your desired shadow properties here */
+    z-index: -1; /* Ensure the shadow is behind the paragraphs */
+}
+
+.occ {
+    -webkit-text-size-adjust: 100%;
+    list-style: none;
+    color: whitesmoke;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    text-align: center;
+    border: 0;
+    font-style: normal;
+    font-size: 100%;
+    font-family: "Your Pretty Font", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.center-button {
+    width: 160px;
+    height: 60px;
+    background-color: rgb(66, 66, 66);
+    border: none;
+    cursor: pointer;
+    border-radius: 60px;
+    color: white;
+    margin-top: 60px;
+    font-size: 20px;
+}
+
+.first-section {
+    background-image: url("img/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.second-section {
+    margin-top: 75px;
+}
+
+.second-section h1 {
+    text-align: center;
+    font-family: "Your Pretty Font", sans-serif;
+}
+
+.course-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    margin: 15px;
+    margin-left: 15px;
+    margin-left: 15px;
+    margin-bottom: 0px;
+    overflow: hidden;
+    width: 320px;
+    height: 320px;
+}
+
+.course-img {
+    transition: opacity 0.3s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.course-img:hover {
+    opacity: 0.8;
+    /* Adjust the opacity value to your preference */
+}
+
+.buy-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.image-container:hover .buy-button {
+    opacity: 1;
+}
+
+.image-container:hover .buy-button:hover {
+    opacity: 0.9;
+}
+
+.image-container:hover .buy-button:active {
+    opacity: 0.8;
+}
+
+.image-container:hover .course-img {
+    opacity: 0.5;
+    /* Adjust the opacity value to your preference */
+}
+
+.description {
+    -webkit-text-size-adjust: 100%;
+    list-style: none;
+    font-style: normal;
+    line-height: 1.45;
+    hyphens: auto;
+    cursor: pointer;
+    text-align: center;
+    color: #1d2023;
+    word-break: break-word;
+    margin-top: 12px;
+    font-size: 25px;
+    font-family: "manrope", sans-serif;
+    font-weight: 400;
+}
+
+.third-section {
+    font-size: 25px;
+    font-family: "manrope", sans-serif;
+    color: #1d2023;
+    margin: 0 auto;
+    padding: 60px 0;
+    display: flex;
+    align-items: center;
+    transition: padding-bottom .5s;
+    font-size: 17px;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    text-align: center;
+    flex-direction: column;
+}
+
+.third-section h2 {
+    text-align: center;
+    color: #1D2023;
+    font-size: 36px;
+    line-height: 1.2;
+}
+
+.third-section h4 {
+    text-align: center;
+    color: #333333;
+    font-size: 18px;
+    line-height: 1.45;
+}
+
+.third-section label {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-family: inherit;
+    font-size: 18px;
+    line-height: 25px;
+    color: #bbb;
+    cursor: text;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.third-section input,
+.third-section textarea {
+    margin: 0;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    font-family: inherit;
+    background: #fff;
+    color: #444;
+    font-size: 18px;
+    padding: 11px 10px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.third-section textarea {
+    display: block;
+    height: 135px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group input:invalid,
+.form-group textarea:invalid {
+    border-color: red;
+}
+
+.form-group input.valid,
+.form-group textarea.valid {
+    border-color: #bbb;
+}
+
+.form-group-error {
+    color: red;
+    font-size: 14px;
+    display: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    text-align: center;
+    position: relative;
+}
+
+.thank-you-message {
+    color: green;
+    margin-top: 10px;
+    display: none;
+}
+
+.third-section button {
+    width: 120px;
+    height: 50px;
+    background-color: rgb(66, 66, 66);
+    border: none;
+    cursor: pointer;
+    border-radius: 60px;
+    color: white;
+    font-size: 20px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #bbb;
+}
+
+.bottom-bar {
+    background-color: #ddd;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer-links li a {
+    text-decoration: none;
+    color: #666;
+}
